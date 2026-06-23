@@ -9,6 +9,7 @@ public class SLOT_Machine
 
         int balance = 100, bet, payout ;
         String[] row;
+        String playAGain = "-1" ;
 
         System.out.println("Welcome to Java Slots");
         System.out.println("Symbols: @ # $ % &") ;
@@ -36,8 +37,28 @@ public class SLOT_Machine
             System.out.println("\nSpinning...");
             row = spinRow();
             printRow(row) ;
+
+            payout = getPayOut(row, bet) ;
+
+            if(payout > 0) {
+                System.out.println("\nYou won $" + payout);
+                balance += payout ;
+            }
+            else {
+                System.out.println("\nYou lose this round!!");
+            }
+            
+            System.out.println();
+            System.out.print("\nDo you want to play again?(Y/N) : ");
+
+            playAGain = sc.next().toUpperCase();
+
+            if(playAGain.equals("N")) {
+                break ;
+            }
         }
 
+        System.out.println("Thank you!!");
         sc.close() ;
     }
 
@@ -57,5 +78,22 @@ public class SLOT_Machine
 
     static void printRow(String[] row) {
         System.out.println(" " + String.join(" | ", row));
+    }
+
+    static int getPayOut(String[] row, int bet)
+    {
+        if(row[0].equals(row[1]) && row[0].equals(row[2]))
+        {
+            return switch(row[0]) {
+                case "@" -> bet * 3 ;
+                case "#" -> bet * 5 ;
+                case "$" -> bet * 10 ;
+                case "%" -> bet * 20 ;
+                case "&" -> bet * 30 ;
+                default -> 0 ;
+            };
+        }
+
+        return 0;
     }
 }
