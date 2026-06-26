@@ -1,4 +1,4 @@
-public class Main{
+public class Main{ 
     public static void main(String[] args)
     {
         Students s1 = new Students("Sourav", 22, 9.6) ; 
