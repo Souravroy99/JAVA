@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main5{
+public class String_Methods{
     public static void main(String[] args)
     {
         String str = "Sourav Roy" ;
