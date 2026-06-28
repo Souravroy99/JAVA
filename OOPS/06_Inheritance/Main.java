@@ -15,5 +15,10 @@ public class Main
         System.out.println(cat.lives);
         cat.eat();
         cat.speak();
+
+        Plant plant = new Plant() ;
+        
+        System.out.println(plant.isAlive);
+        plant.photosynthesis() ;
     }
 }
