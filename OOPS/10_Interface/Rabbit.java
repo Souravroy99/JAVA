@@ -1,6 +1,6 @@
 public class Rabbit implements Prey
 {
-    void flee() {
-        System.out.println("Rabbit flee");
+    public void flee() {
+        System.out.println("\nThe Rabbit is running away!\n");
     }
-}
+} 
