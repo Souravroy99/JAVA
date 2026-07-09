@@ -27,7 +27,7 @@ public class Main {
         if(ans.size() == 0) System.out.println("NAA") ;
         else{
             for(TravelAgencies t: ans) {
-                System.out.println(t.regNo) ;
+                System.out.println(t.agencyName + ":" + t.price) ;
             }
         }
 
